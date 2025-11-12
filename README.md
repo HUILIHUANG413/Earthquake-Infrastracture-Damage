@@ -80,8 +80,6 @@ The performance of baseline model are listed below. The model parameters are ini
 | SwinV2-S         | 91.7         | 91.1         |
 | SwinV2-B         | 91.0         | 90.5         |
 
-## Checkpoint
-Under construction...
 
 ## License
 
