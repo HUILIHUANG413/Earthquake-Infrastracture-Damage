@@ -28,7 +28,7 @@ class Final_dataset(data.Dataset):
 
         # Read the dataset file
         df = pd.read_csv(file_path, sep=sep)
-        #mapping = {'little_or_none': 0, 'mild': 1, 'severe': 2}
+        #mapping = {'little_or_none': 1, 'mild': 2, 'severe': 3}
         #df['damage_severity'] = df['damage_severity'].replace(mapping)
         # Convert the 'damage_severity' column to string if needed
         df['damage_severity'] = df['damage_severity'].astype(str)
@@ -39,7 +39,7 @@ class Final_dataset(data.Dataset):
         self.classes, self.class_to_idx = self._find_classes()
 
         if self.three_class==True and len(self.classes) !=3:
-            mapping = {'0':'0','1':'1','2':'2','3': '0'}
+            mapping = {'0':'0','1':'0','2':'2','3': '3'}
             df['damage_severity'] = df['damage_severity'].replace(mapping)
         self.y = df['damage_severity'].tolist()
         self.samples = list(zip(self.X, self.y))
